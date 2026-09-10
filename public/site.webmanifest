@@ -1,0 +1,18 @@
+{
+  "name": "Nova Precil - Pré Moldados de Concreto",
+  "short_name": "Nova Precil",
+  "description": "Pré-moldados de concreto com tradição e qualidade desde 1989.",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#002b1a",
+  "icons": [
+    {
+      "src": "/assets/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
