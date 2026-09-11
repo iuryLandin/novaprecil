@@ -9,6 +9,7 @@ import {
   Instagram,
   Mail,
   MapPin,
+  MessageCircle,
   Menu,
   Phone,
   ShieldCheck,
@@ -92,6 +93,9 @@ function Footer() {
         <div className="footer-content">
           <div className="footer-info">
             <h2>Links úteis:</h2>
+            <Link to="/contato/">
+              <MessageCircle /> Contato
+            </Link>
             <Link to="/politica-de-privacidade/">
               <ShieldCheck /> Política de Privacidade
             </Link>
@@ -772,6 +776,91 @@ function PrivacyPolicyPage() {
   )
 }
 
+function ContactPage() {
+  return (
+    <Layout>
+      <Seo
+        title="Contato"
+        description="Entre em contato com a Nova Precil por telefone, WhatsApp ou e-mail e encontre nosso endereço em Palmas, Tocantins."
+        path="/contato/"
+      />
+      <PageHero title="Contato" eyebrow="Fale com a Nova Precil" compact />
+      <section className="contact-page">
+        <div className="contact-layout page-container">
+          <div className="contact-panel">
+            <span className="contact-eyebrow">Estamos à disposição</span>
+            <h2>Entre em contato</h2>
+            <p className="contact-intro">
+              Fale com nossa equipe para solicitar um orçamento, tirar dúvidas ou conhecer melhor nossos produtos.
+            </p>
+
+            <div className="contact-list">
+              <a className="contact-item" href="tel:+556332177000">
+                <span className="contact-icon" aria-hidden="true">
+                  <Phone />
+                </span>
+                <span>
+                  <strong>Telefone e WhatsApp</strong>
+                  <span>(63) 3217-7000</span>
+                </span>
+              </a>
+
+              <a className="contact-item" href="mailto:diretoria@novaprecil.com.br">
+                <span className="contact-icon" aria-hidden="true">
+                  <Mail />
+                </span>
+                <span>
+                  <strong>E-mail</strong>
+                  <span>diretoria@novaprecil.com.br</span>
+                </span>
+              </a>
+
+              <a
+                className="contact-item"
+                href="https://maps.google.com/?q=Nova+Precil+Palmas+TO"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span className="contact-icon" aria-hidden="true">
+                  <MapPin />
+                </span>
+                <span>
+                  <strong>Endereço</strong>
+                  <span>412 Norte, Al. 02, QI. 04, Lts. 18 a 22 — Palmas/TO</span>
+                </span>
+              </a>
+            </div>
+
+            <a className="button contact-whatsapp" href={whatsappUrl} target="_blank" rel="noreferrer">
+              <MessageCircle /> Falar pelo WhatsApp
+            </a>
+
+            <div className="contact-social" aria-label="Redes sociais">
+              <a href="https://www.instagram.com/novaprecil/" target="_blank" rel="noreferrer">
+                <Instagram /> Instagram
+              </a>
+              <a href="https://www.facebook.com/novapreciloficial" target="_blank" rel="noreferrer">
+                <Facebook /> Facebook
+              </a>
+            </div>
+          </div>
+
+          <div className="contact-map-wrap">
+            <iframe
+              className="contact-map"
+              title="Localização da Nova Precil em Palmas"
+              src="https://www.google.com/maps?q=Nova%20Precil%2C%20Palmas%20TO&output=embed"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      </section>
+    </Layout>
+  )
+}
+
 function NotFound() {
   return (
     <Layout>
@@ -812,6 +901,8 @@ export default function App() {
         <Route path="/produtos/:slug/" element={<ProductDetail />} />
         <Route path="/obras/" element={<WorksPage />} />
         <Route path="/politica-de-privacidade/" element={<PrivacyPolicyPage />} />
+        <Route path="/contato/" element={<ContactPage />} />
+        <Route path="/contatos/" element={<ContactPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
