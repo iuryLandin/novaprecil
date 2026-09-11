@@ -683,6 +683,30 @@ main {
   fill: currentColor;
 }
 
+.footer-company-data {
+  display: grid;
+  margin: 0;
+  gap: 5px;
+}
+
+.footer-company-data div {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+.footer-company-data dt {
+  color: var(--lime);
+  font-weight: 700;
+}
+
+.footer-company-data dd {
+  margin: 0;
+  color: #ffffff;
+}
+
 .copyright {
   margin: auto 0 0;
   font-size: 0.63rem;
@@ -1626,6 +1650,13 @@ main {
 
   .footer-info a {
     font-size: 0.75rem;
+  }
+
+  .footer-company-data div {
+    align-items: flex-start;
+    font-size: 0.7rem;
+    flex-direction: column;
+    gap: 1px;
   }
 
   .copyright {

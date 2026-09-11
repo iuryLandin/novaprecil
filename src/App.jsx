@@ -118,6 +118,22 @@ function Footer() {
             <a href="https://maps.google.com/?q=Nova+Precil+Palmas+TO" target="_blank" rel="noreferrer">
               <MapPin /> 412 norte, Al. 02, Qi. 04, Lts. 18 à 22 / Palmas-TO
             </a>
+
+            <h2>Dados da empresa:</h2>
+            <dl className="footer-company-data">
+              <div>
+                <dt>CNPJ:</dt>
+                <dd>26.754.497/0001-27</dd>
+              </div>
+              <div>
+                <dt>Razão Social:</dt>
+                <dd>Premais Fabricacao de Premoldados LTDA</dd>
+              </div>
+              <div>
+                <dt>Nome Fantasia:</dt>
+                <dd>Nova Precil</dd>
+              </div>
+            </dl>
           </div>
 
           <iframe
