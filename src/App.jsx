@@ -530,7 +530,7 @@ function PageHero({ title, eyebrow, compact = false }) {
 }
 
 function ProductsArchive({ page = 1 }) {
-  const pageSize = 10
+  const pageSize = 12
   const start = (page - 1) * pageSize
   const currentProducts = products.slice(start, start + pageSize)
 
@@ -541,18 +541,42 @@ function ProductsArchive({ page = 1 }) {
         description="Conheça o portifólio de pré-moldados de concreto da Nova Precil."
         path={page > 1 ? `/produtos/page/${page}/` : '/produtos/'}
       />
-      <section className="archive-section archive-original">
+      <PageHero title="Nossos Produtos" eyebrow="Portfólio Nova Precil" />
+      <section className="archive-section archive-products">
         <div className="page-container">
-          <h1>Arquivos: Produtos</h1>
+          <div className="archive-heading">
+            <div>
+              <span>Qualidade em cada detalhe</span>
+              <h2>Soluções para o seu projeto</h2>
+            </div>
+            <p>
+              Conheça nossa linha de pré-moldados de concreto desenvolvida para oferecer resistência, padronização e
+              agilidade para sua obra.
+            </p>
+          </div>
+
           <div className="archive-list">
-            {currentProducts.map((product) => (
-              <article key={product.slug}>
-                <h2>
-                  <Link to={`/produtos/${product.slug}/`}>{product.name}</Link>
-                </h2>
-                <Link to={`/produtos/${product.slug}/`} aria-label={`Ver ${product.name}`}>
+            {currentProducts.map((product, index) => (
+              <article className="archive-product-card" key={product.slug}>
+                <Link
+                  className="archive-product-image"
+                  to={`/produtos/${product.slug}/`}
+                  aria-label={`Ver ${product.name}`}
+                >
                   <img src={product.image} alt={product.name} loading="lazy" width="1024" height="796" />
                 </Link>
+                <div className="archive-product-content">
+                  <span>Pré-moldado de concreto</span>
+                  <h3>
+                    <Link to={`/produtos/${product.slug}/`}>{product.name}</Link>
+                  </h3>
+                  <Link className="archive-product-action" to={`/produtos/${product.slug}/`}>
+                    Ver produto <ChevronRight />
+                  </Link>
+                </div>
+                <span className="archive-product-number" aria-hidden="true">
+                  {String(start + index + 1).padStart(2, '0')}
+                </span>
               </article>
             ))}
           </div>
