@@ -773,6 +773,113 @@ main {
   text-transform: uppercase;
 }
 
+.cookie-banner {
+  position: fixed;
+  z-index: 80;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 14px 96px 14px 24px;
+  border-top: 1px solid rgba(155, 202, 63, 0.38);
+  background: rgba(0, 31, 19, 0.97);
+  color: #ffffff;
+  box-shadow: 0 -8px 30px rgba(0, 14, 6, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.cookie-banner-inner {
+  display: flex;
+  width: min(1120px, 100%);
+  min-height: 54px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.cookie-banner p {
+  margin: 0;
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+.cookie-banner p a {
+  color: var(--lime);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.cookie-banner button {
+  min-width: 174px;
+  min-height: 44px;
+  padding: 10px 18px;
+  border: 0;
+  border-radius: 7px;
+  background: var(--lime);
+  color: var(--green-950);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.cookie-banner button:hover {
+  background: #b0dc59;
+  transform: translateY(-1px);
+}
+
+.cookie-banner + .whatsapp-widget {
+  bottom: 104px;
+}
+
+.privacy-policy {
+  padding: 72px 0 96px;
+  background: #f5f8f6;
+}
+
+.privacy-policy-content {
+  width: min(860px, calc(100% - 48px));
+  padding: 52px 58px;
+  border: 1px solid #e3ebe6;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 12px 34px rgba(0, 43, 26, 0.07);
+}
+
+.privacy-policy-content h2 {
+  margin: 42px 0 15px;
+  color: var(--green-900);
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.privacy-policy-content p,
+.privacy-policy-list {
+  margin: 0 0 18px;
+  color: #37413b;
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.privacy-policy-list {
+  padding-left: 24px;
+}
+
+.privacy-policy-list li {
+  margin-bottom: 12px;
+  padding-left: 5px;
+}
+
+.privacy-policy-effective-date {
+  margin-top: 34px !important;
+  padding-top: 22px;
+  border-top: 1px solid #e3ebe6;
+  color: var(--green-700) !important;
+  font-weight: 700;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -1383,6 +1490,30 @@ main {
     width: min(290px, calc(100vw - 32px));
   }
 
+  .cookie-banner {
+    padding: 18px 16px;
+  }
+
+  .cookie-banner-inner {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 13px;
+  }
+
+  .cookie-banner p {
+    font-size: 0.72rem;
+    line-height: 1.5;
+  }
+
+  .cookie-banner button {
+    width: 100%;
+    min-height: 42px;
+  }
+
+  .cookie-banner + .whatsapp-widget {
+    bottom: 220px;
+  }
+
   .page-hero {
     min-height: 255px;
   }
@@ -1431,6 +1562,27 @@ main {
 
   .page-hero-compact h1 {
     font-size: 1.55rem;
+  }
+
+  .privacy-policy {
+    padding: 38px 0 58px;
+  }
+
+  .privacy-policy-content {
+    width: calc(100% - 24px);
+    padding: 30px 22px;
+    border-radius: 14px;
+  }
+
+  .privacy-policy-content h2 {
+    margin-top: 34px;
+    font-size: 1.2rem;
+  }
+
+  .privacy-policy-content p,
+  .privacy-policy-list {
+    font-size: 0.82rem;
+    line-height: 1.7;
   }
 
   .works-section {
