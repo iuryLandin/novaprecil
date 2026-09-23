@@ -943,6 +943,8 @@ export default function App() {
         <Route path="/politica-de-privacidade/" element={<PrivacyPolicyPage />} />
         <Route path="/contato/" element={<ContactPage />} />
         <Route path="/contatos/" element={<ContactPage />} />
+        <Route path="/404" element={<NotFound />} />
+        <Route path="/404.html" element={<NotFound />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
