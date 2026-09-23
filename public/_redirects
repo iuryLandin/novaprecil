@@ -9,5 +9,9 @@
 /contato/ /index.html 200
 /contatos/ /index.html 200
 
+# URL desconhecida => 404 real
+/* /404.html 404
+
+# Páginas de erro explícitas
 /404 /404.html 404
 /404.html /404.html 404
